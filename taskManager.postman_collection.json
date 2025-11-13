@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "b33cae4e-41f4-4cfc-8f86-e2ee1810d1de",
+		"name": "taskManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42118958"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/api/Registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"Registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"isabella.thomas@example.com\",\n    \"password\" : \"Isabella#123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/api/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/api/VerifyEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"VerifyEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerificationCode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/api/VerificationCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"VerificationCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ResetPassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/api/ResetPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"ResetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProfileDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/api/ProfileDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"ProfileDetails"
+					],
+					"query": [
+						{
+							"key": "Token",
+							"value": "{{TOKEN}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProfileUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"email\": \"isabella.thomas@example.com\",\n    \"firstName\": \"Isabella\",\n    \"lastName\": \"Thomas\",\n    \"mobileNumber\": \"9876543219\",\n    \"password\": \"Isabella#123\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/api/ProfileUpdate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"ProfileUpdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/api/CreateTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"CreateTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatedTaskStatus",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/api/UpdatedTaskStatus/67a96ea1f876b6cf2b3eaf2e/completed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"UpdatedTaskStatus",
+						"67a96ea1f876b6cf2b3eaf2e",
+						"completed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TaskListByStatus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<canvas id=\"myPieChart\" height=\"75\"></canvas>",
+							"",
+							"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+							"",
+							"<script>",
+							"    var ctx = document.getElementById(\"myPieChart\");",
+							"",
+							"    var myPieChart = new Chart(ctx, {",
+							"        type: \"pie\",",
+							"        data: {",
+							"            labels: [],",
+							"            datasets: [{",
+							"                data: [],",
+							"                ",
+							"                // Change these colours to customize the chart",
+							"                backgroundColor: [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\"],",
+							"            }]",
+							"        },",
+							"        options: {",
+							"            title: {",
+							"                display: true,",
+							"                text: 'Task Status Distribution'",
+							"            }",
+							"        }",
+							"",
+							"    });",
+							"",
+							"    // Access the data passed to pm.visualizer.set() from the JavaScript",
+							"    // code of the Visualizer template",
+							"    pm.getData(function (err, value) {",
+							"        var data = value.response.data;",
+							"        var statusCount = {};",
+							"",
+							"        data.forEach(function(task) {",
+							"            if (statusCount[task.status]) {",
+							"                statusCount[task.status]++;",
+							"            } else {",
+							"                statusCount[task.status] = 1;",
+							"            }",
+							"        });",
+							"",
+							"        for (var status in statusCount) {",
+							"            myPieChart.data.labels.push(status);",
+							"            myPieChart.data.datasets[0].data.push(statusCount[status]);",
+							"        }",
+							"",
+							"        myPieChart.update();",
+							"    });",
+							"",
+							"</script>`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    var res = pm.response.json();",
+							"    return {response: res};",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/api/TaskListByStatus/completed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"TaskListByStatus",
+						"completed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CountTask",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/api/CountTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"CountTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/api/DeleteTask/67ab4037835cceea7278bc64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"DeleteTask",
+						"67ab4037835cceea7278bc64"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzYWJlbGxhLnRob21hc0BleGFtcGxlLmNvbSIsInVzZXJfaWQiOiI2N2E4YjJjZjY4ODhiZjhkOGJhYWYzOTQiLCJpYXQiOjE3MzkzMjc3NzQsImV4cCI6MTczOTQxNDE3NH0.LFJf-bxeIGquthk6pF5ZdzW4glb_IckCp09ndWWnW54",
+			"type": "string"
+		}
+	]
+}
