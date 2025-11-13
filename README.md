@@ -63,17 +63,17 @@ The API should now be running at http://localhost:3000 (or the port defined in y
 
 The API follows a standard RESTful structure. Below are the core endpoints:
 
-        Method                  |Endpoint                           |Description                                        |Access                                        |Success Response
+        Method                  |Endpoint                           |Description                                        |Access
 
-        POST                     /Registration                      Creates a new user.                                 Public                                          201 Created
+        POST                     /Registration                      Creates a new user.                                 Public                                          
 
-        POST                     /login                             Retrieves all tasks.                                Public                                          200 OK (Array of tasks)
+        POST                     /login                             Retrieves all tasks.                                Public
 
-        GET                      /VerifyEmail                       Retrieves a single task by ID.                      Private                                         200 OK (Single task object)
+        GET                      /VerifyEmail                       Retrieves a single task by ID.                      Private
 
-        POST                     /VerificationCode                  Updates an existing task.                           Private                                         200 OK
+        POST                     /VerificationCode                  Updates an existing task.                           Private
 
-        POST                     /ResetPassword                     Resets password                                     Private                                         204 No Content
+        POST                     /ResetPassword                     Resets password                                     Private
 
         GET                      /ProfileDetails                    Shows user profile data                             Private                                                  
 
